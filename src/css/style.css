@@ -1,0 +1,340 @@
+/* Rick Owens inspired - minimal editorial luxury */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+:root {
+    --color-bg: #0a0a0a;
+    --color-surface: #141414;
+    --color-text: #f5f5f0;
+    --color-text-muted: #8c8c8c;
+    --color-border: #2a2a2a;
+    --color-accent: #f5f5f0;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+    --letter-spacing: 0.12em;
+    --transition: 0.25s ease;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header - Rick Owens style: minimal, centered */
+.header {
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+}
+
+.logo:hover {
+    color: var(--color-text-muted);
+}
+
+.nav {
+    display: flex;
+    gap: 3rem;
+    letter-spacing: var(--letter-spacing);
+}
+
+.nav-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--color-text);
+}
+
+.nav-cart {
+    color: var(--color-text);
+}
+
+.cart-badge {
+    background: var(--color-text);
+    color: var(--color-bg);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.45rem;
+    margin-left: 0.35rem;
+    letter-spacing: 0.05em;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem;
+    width: 100%;
+}
+
+.main-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 3rem;
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.alert-success {
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Product grid - editorial layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2rem;
+}
+
+.product-card:hover .product-info h3,
+.product-card:hover .price {
+    color: var(--color-text-muted);
+}
+
+.product-info h3 {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    transition: color var(--transition);
+}
+
+.product-info .price {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.08em;
+}
+
+.add-to-cart-form {
+    margin-top: auto;
+}
+
+.add-to-cart-form label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+    color: var(--color-text-muted);
+}
+
+.quantity-input {
+    width: 80px;
+    padding: 0.6rem;
+    margin-right: 0.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: var(--color-text-muted);
+}
+
+/* Buttons - minimal */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-text);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: var(--letter-spacing);
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition);
+}
+
+.btn:hover {
+    background: var(--color-text);
+    color: var(--color-bg);
+}
+
+.btn-primary {
+    width: 100%;
+    margin-top: 0.25rem;
+}
+
+.btn-secondary {
+    border-color: var(--color-text-muted);
+    color: var(--color-text-muted);
+}
+
+.btn-secondary:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.65rem;
+}
+
+.btn-danger {
+    border-color: var(--color-text-muted);
+    color: var(--color-text-muted);
+}
+
+.btn-danger:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+/* Cart */
+.empty-cart {
+    padding: 4rem 2rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+}
+
+.empty-cart a {
+    color: var(--color-text);
+    text-decoration: none;
+    letter-spacing: var(--letter-spacing);
+    border-bottom: 1px solid var(--color-text);
+}
+
+.empty-cart a:hover {
+    color: var(--color-text-muted);
+    border-color: var(--color-text-muted);
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 1.5rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.cart-table th {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+    color: var(--color-text-muted);
+}
+
+.quantity-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity-form .quantity-input {
+    width: 70px;
+}
+
+.cart-summary {
+    max-width: 400px;
+    margin: 3rem 0 0 auto;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    font-size: 0.9rem;
+}
+
+.summary-row.total {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.cart-actions {
+    margin-top: 2rem;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem 2.5rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    letter-spacing: var(--letter-spacing);
+}
