@@ -1,6 +1,8 @@
 # E-commerce en PHP
 
-Aplicació web d'e-commerce en PHP per a la pràctica d'Entorn de Desenvolupament.
+Aplicació web d'e-commerce en PHP
+
+Fet per Fabio i Robin
 
 ## Entrega Intermèdia (20/02/2026)
 
