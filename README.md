@@ -32,7 +32,13 @@ Obre el navegador a: http://localhost:8080
 Assegureu-vos de tenir PHP instal·lat:
 
 ```bash
-php -S localhost:8000
+cd src && php -S localhost:8000
+```
+
+O des del directori arrel del projecte:
+
+```bash
+php -S localhost:8000 -t src
 ```
 
 ### Estructura

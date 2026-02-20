@@ -17,33 +17,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-$page_title = 'Carret de la compra';
+$page_title = 'Carrito de la compra';
 require_once 'inc/header.php';
 ?>
 
 <main class="main-content">
-    <h2>Carret de la compra</h2>
+    <h1 class="page-title">Carrito de la compra</h1>
 
     <?php 
     $cart_items = getCartItems();
     if (empty($cart_items)): ?>
-        <p class="empty-cart">El vostre carret està buit. <a href="index.php">Tornar a la botiga</a></p>
+        <p class="empty-cart">Tu carrito está vacío. <a href="index.php">Volver a la tienda</a></p>
     <?php else: ?>
 
+        <div class="cart-table-wrap">
         <table class="cart-table">
             <thead>
                 <tr>
-                    <th>Producte</th>
-                    <th>Preu unitari</th>
-                    <th>Quantitat</th>
+                    <th>Producto</th>
+                    <th>Precio unitario</th>
+                    <th>Cantidad</th>
                     <th>Subtotal</th>
-                    <th>Accions</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($cart_items as $item): ?>
                     <tr>
-                        <td><?php echo htmlspecialchars($item['nom']); ?></td>
+                        <td class="cart-product-cell">
+                            <?php if (!empty($item['img'])): ?>
+                                <img src="<?php echo htmlspecialchars($item['img']); ?>" alt="<?php echo htmlspecialchars($item['nom']); ?>" class="cart-product-img">
+                            <?php endif; ?>
+                            <span class="cart-product-name"><?php echo htmlspecialchars($item['nom']); ?></span>
+                        </td>
                         <td><?php echo formatPrice($item['preu']); ?></td>
                         <td>
                             <form method="post" class="quantity-form">
@@ -51,12 +57,12 @@ require_once 'inc/header.php';
                                 <input type="hidden" name="update_quantity" value="1">
                                 <input type="number" name="quantity" value="<?php echo $item['quantitat']; ?>" 
                                        min="1" class="quantity-input">
-                                <button type="submit" class="btn btn-small">Actualitzar</button>
+                                <button type="submit" class="btn btn-small">Actualizar</button>
                             </form>
                         </td>
                         <td><?php echo formatPrice($item['subtotal']); ?></td>
                         <td>
-                            <form method="post" class="remove-form" onsubmit="return confirm('Segur que voleu eliminar aquest producte?');">
+                            <form method="post" class="remove-form" onsubmit="return confirm('¿Seguro que quieres eliminar este producto?');">
                                 <input type="hidden" name="product_id" value="<?php echo $item['id']; ?>">
                                 <input type="hidden" name="remove" value="1">
                                 <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -66,10 +72,11 @@ require_once 'inc/header.php';
                 <?php endforeach; ?>
             </tbody>
         </table>
+        </div>
 
         <div class="cart-summary">
             <div class="summary-row">
-                <span>Subtotal (sense IVA):</span>
+                <span>Subtotal (sin IVA):</span>
                 <strong><?php echo formatPrice(getCartSubtotal()); ?></strong>
             </div>
             <div class="summary-row">

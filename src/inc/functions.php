@@ -43,6 +43,7 @@ function getCartItems() {
                 'id' => $product['id'],
                 'nom' => $product['nom'],
                 'preu' => $product['preu'],
+                'img' => $product['img'] ?? '',
                 'quantitat' => $quantity,
                 'subtotal' => $product['preu'] * $quantity,
             ];
