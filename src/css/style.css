@@ -467,6 +467,149 @@ body {
     margin-top: 2rem;
 }
 
+/* ===== Checkout & Payment - Refined ===== */
+.checkout-wrapper {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 3rem 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.checkout-title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.checkout-total {
+    text-align: center;
+    font-family: var(--font-sans);
+    margin-bottom: 3rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: var(--letter-spacing);
+}
+
+.checkout-total strong {
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    font-family: var(--font-serif);
+    letter-spacing: 0;
+}
+
+.form-row {
+    margin-bottom: 2.5rem;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+    color: var(--color-text-muted);
+}
+
+.form-input-text {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    transition: border-color var(--transition);
+    outline: none;
+}
+
+.form-input-text:focus {
+    border-color: var(--color-text-muted);
+}
+
+#card-element {
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    transition: border-color var(--transition);
+}
+
+/* Efecto cuando el usuario hace clic en el recuadro de la tarjeta */
+#card-element.StripeElement--focus {
+    border-color: var(--color-text-muted);
+}
+
+#card-errors {
+    color: #ff4d4d;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    font-family: var(--font-sans);
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 0.8rem;
+    letter-spacing: var(--letter-spacing);
+    margin-top: 1rem;
+}
+
+/* ===== Success Page - Refined ===== */
+.success-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.success-icon {
+    font-size: 2rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-serif);
+}
+
+.success-main .page-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.success-details {
+    width: 100%;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: 2.5rem 1rem;
+    margin-bottom: 3rem;
+}
+
+.success-text {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-family: var(--font-sans);
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+.btn-success {
+    padding: 1rem 3rem;
+    font-size: 0.75rem;
+}
+
 /* Footer */
 .footer {
     border-top: 1px solid var(--color-border);

@@ -27,6 +27,7 @@ services:
       - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/database.sql
     networks:
       - appnet
 

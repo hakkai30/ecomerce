@@ -89,8 +89,9 @@ require_once 'inc/header.php';
             </div>
         </div>
 
-        <div class="cart-actions">
-            <a href="index.php" class="btn btn-secondary">Continuar comprant</a>
+        <div class="cart-actions" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.php" class="btn btn-secondary">Continuar comprando</a>
+            <a href="checkout.php" class="btn btn-primary" style="width: auto;">Proceder al pago</a>
         </div>
 
     <?php endif; ?>
